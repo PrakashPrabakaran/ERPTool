@@ -1,5 +1,6 @@
 package ERP;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
@@ -218,9 +219,106 @@ public class pageLocators {
 	@FindBy(xpath="//div[@class='standard-actions flex']/button[@data-label='Save']")
 	public WebElement LESS_STANDARD_ACTIONS_FELX;
 	
+    
+	@FindBy(xpath="//span[text()='HR']")
+	public WebElement EXIT_CLICKON_HR;
+	
+	@FindBy(xpath="//div[@class='widget-group-body grid-col-3']/div/div/div/div/span[text()='Employee']")
+	public WebElement EXIT_CLICKON_EMP;
+	
+	@FindBy(xpath="//div[@class='filter-selector']")
+	public WebElement EXIT_CLICKON_FILTER;
+	
+	
+	@FindBy(xpath="//div//button[@class='btn btn-secondary btn-xs clear-filters']")
+	public WebElement EXIT_CLICKON_CLEAR_FILTERS;
+	
+	@FindBy(xpath="//button[@class='btn btn-primary btn-xs apply-filters']")
+	public WebElement EXIT_CLICKON_APPLY_FILTERS;
+	
+	
+	@FindBy(xpath="//a[contains(text(),'Senior Afterdate')]")
+	public WebElement EXIT_CLICKON_EMPNAME;
+	
 
 	
 	
 	
+	
+	
+	
+	@FindBy(xpath="//div[@class='control-input-wrapper']/div/select[@data-fieldname='status']")
+	public WebElement EXIT_CLICKON_STATUS;
+	
+	@FindBy(xpath="//div[@class='row form-section card-section visible-section']//div[contains(text(),'Exit')]")
+	public WebElement EXIT_CLICKON_EXIT;
+	
+	
+	@FindBy(xpath="//select[@data-fieldname='exit_type']")
+	public WebElement EXIT_CLICKON_EXIT_TYPE;
+	
+	@FindBy(xpath="//input[@data-fieldname='resignation_letter_date']")
+	public WebElement EXIT_CLICKON_RESIGNATION_LETTER_DATE;
+	
+	@FindBy(xpath="//input[@data-fieldname='resignation_letter_date']")
+	public WebElement EXIT_CLICKON_RESIGNATION_LETTER_DATE2;
+	
+	
+	@FindBy(xpath="//input[@data-fieldname='relieving_date']")
+	public WebElement EXIT_CLICKON_RELIVING_LETTER_DATE;
+	
+	@FindBy(xpath="//input[@data-fieldname='relieving_date']")
+	public WebElement EXIT_CLICKON_RELIVING_LETTER_DATE2;
+	
+	@FindBy(xpath="//div[@class='control-input']//textarea[@data-fieldname='reason_for_leaving']")
+	public WebElement EXIT_CLEAR_REASONFOR_RELIVING;
+	
+	@FindBy(xpath="//div[@class='control-input']//textarea[@data-fieldname='reason_for_leaving']")
+	public WebElement EXIT_TEXT_REASONFOR_RELIVING;
+	
+	@FindBy(xpath="//button[text()='S']")
+	public WebElement EXIT_CLICKON_SAVE;
+	
+	@FindBy(xpath="//div[@class='row form-section card-section visible-section']//div[contains(text(),'ERPNext User')]")
+	public WebElement EXIT_CLICKON__EXIT_DROPDOWN;
+	
+	
+	@FindBy(xpath="//input[@data-fieldname='user_id']")
+	public WebElement EXIT_CLICKON__EXIT_FIELD;
+
+	@FindBy(xpath="//span[contains(@style,'display:')]//a[@title='Open Link']")
+	public WebElement EXIT_CLICKON__EXIT_ARROW;
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
 	
 }

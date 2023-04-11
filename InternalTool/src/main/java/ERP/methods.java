@@ -1,6 +1,7 @@
 package ERP;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -185,6 +186,44 @@ public class methods extends BaseClass{
 		locators.LESS_STANDARD_ACTIONS.click();
 		Thread.sleep(3000);
 		locators.LESS_STANDARD_ACTIONS_FELX.click();		
+		
+	}
+	
+	public void exitEmp() throws InterruptedException 
+	{
+		locators.EXIT_CLICKON_HR.click();
+		locators.EXIT_CLICKON_EMP.click();
+		locators.EXIT_CLICKON_FILTER.click();
+		Thread.sleep(3000);
+		locators.EXIT_CLICKON_CLEAR_FILTERS.click();
+		locators.EXIT_CLICKON_APPLY_FILTERS.click();
+		Thread.sleep(3000);
+		locators.EXIT_CLICKON_EMPNAME.click();
+		
+		
+		selectByVisibletext(locators.EXIT_CLICKON_STATUS,user.EXIT_CLICKON_STATUS);
+		locators.EXIT_CLICKON_EXIT.click();
+		selectByVisibletext(locators.EXIT_CLICKON_EXIT_TYPE,user.EXIT_CLICKON_EXIT_TYPE);
+		
+		//locators.EXIT_CLICKON_RESIGNATION_LETTER_DATE.clear();
+		locators.EXIT_CLICKON_RESIGNATION_LETTER_DATE2.sendKeys(user.REGISTRATION_LETTER_DATE);
+		
+		Thread.sleep(3000);
+		//locators.EXIT_CLICKON_RELIVING_LETTER_DATE.clear();
+		locators.EXIT_CLICKON_RELIVING_LETTER_DATE2.sendKeys(user.RELIVING_LETTER_DATE);
+		
+		locators.EXIT_CLEAR_REASONFOR_RELIVING.clear();
+		locators.EXIT_TEXT_REASONFOR_RELIVING.sendKeys(user.EXIT_TEXT_REASONFOR_RELIVING);
+		
+		locators.EXIT_CLICKON_SAVE.click();
+		
+		((JavascriptExecutor) driver).executeScript("window.scrollTo(document.body.scrollHeight,1500)");
+		Thread.sleep(3000);
+		locators.EXIT_CLICKON__EXIT_DROPDOWN.click();
+		locators.EXIT_CLICKON__EXIT_FIELD.click();
+		Thread.sleep(3000);
+		locators.EXIT_CLICKON__EXIT_ARROW.click();
+		
 		
 	}
 	

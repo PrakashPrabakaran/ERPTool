@@ -70,6 +70,17 @@ public class UserInformation {
     
     public final String LESS_Attach="D:\\Bills_cc\\02-05-2022\\Biscuits.pdf";
     
+    public final String EXIT_CLICKON_STATUS="Left";
+    public final String EXIT_CLICKON_EXIT_TYPE="Resignation";
+    public final String REGISTRATION_LETTER_DATE="11-04-2023";
+    public final String RELIVING_LETTER_DATE="12-04-2023";
+    
+    public final String EXIT_TEXT_REASONFOR_RELIVING="My Bond Is Expired";
+    
+    
+    
+    
+    
     
     
     
