@@ -464,7 +464,7 @@ public class pageLocators {
 	@FindBy(xpath="//input[@data-fieldname='user_id']")
 	public WebElement EXIT_CLICKON__EXIT_FIELD;
 
-	@FindBy(xpath="//span[contains(@style,'display:')]//a[@title='Open Link']")
+	@FindBy(xpath="//span[contains(@style,'display: block;')]//a[@title='Open Link']")
 	public WebElement EXIT_CLICKON__EXIT_ARROW;
 	@FindBy(xpath="//span[@class='avatar avatar-medium']/ancestor::a")
 	public WebElement AVATAR_ICON;
@@ -495,6 +495,12 @@ public class pageLocators {
 	
 	@FindBy(xpath="//div[@class='grid-empty text-center']")
 	public WebElement VERIFY_NO_DATA;
+	
+	@FindBy(xpath="(//span[text()=' Draft'])[1]/preceding::a[@data-doctype='Timesheet']")
+	public WebElement DRAFT_TIMESHEET;
+	
+	@FindBy(xpath="(//span[text()=' Submitted'])[1]/preceding::a[@data-doctype='Timesheet']")
+	public WebElement SUBMITTED_TIMESHEET;
 	
 	@FindBy(xpath="//button[@data-label='Submit']")
 	public WebElement SUBMIT_BUTTON;

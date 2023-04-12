@@ -508,16 +508,16 @@ public class methods extends BaseClass{
 	
 	public void exitEmp() throws InterruptedException 
 	{
-		locators.EXIT_CLICKON_HR.click();
-		locators.EXIT_CLICKON_EMP.click();
-		locators.EXIT_CLICKON_FILTER.click();
-		Thread.sleep(3000);
-		locators.EXIT_CLICKON_CLEAR_FILTERS.click();
-		locators.EXIT_CLICKON_APPLY_FILTERS.click();
-		Thread.sleep(3000);
-		locators.EXIT_CLICKON_EMPNAME.click();
+//		locators.EXIT_CLICKON_HR.click();
+//		locators.EXIT_CLICKON_EMP.click();
+//		locators.EXIT_CLICKON_FILTER.click();
+//		Thread.sleep(3000);
+//		locators.EXIT_CLICKON_CLEAR_FILTERS.click();
+//		locators.EXIT_CLICKON_APPLY_FILTERS.click();
+//		Thread.sleep(3000);
+//		locators.EXIT_CLICKON_EMPNAME.click();
 		
-		
+		Thread.sleep(3000);
 		selectByVisibletext(locators.EXIT_CLICKON_STATUS,user.EXIT_CLICKON_STATUS);
 		locators.EXIT_CLICKON_EXIT.click();
 		selectByVisibletext(locators.EXIT_CLICKON_EXIT_TYPE,user.EXIT_CLICKON_EXIT_TYPE);
@@ -539,6 +539,7 @@ public class methods extends BaseClass{
 		locators.EXIT_CLICKON__EXIT_DROPDOWN.click();
 		locators.EXIT_CLICKON__EXIT_FIELD.click();
 		Thread.sleep(3000);
+		waitForElement(locators.EXIT_CLICKON__EXIT_ARROW);
 		locators.EXIT_CLICKON__EXIT_ARROW.click();
 		
 		
