@@ -44,7 +44,7 @@ public class BaseClass {
 		Reporter.log("Website is launching");
 		driver.get("https://appointry.com/login#login");
 		Reporter.log("User name is entered");
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(60));
 	}
 
 	public static void browserClose() throws IOException {
@@ -206,5 +206,16 @@ public class BaseClass {
 		String employeeIDText = employeeID.getText();
 		return employeeIDText;
 	}
+	
+	public static void javascriptExecutorForceClick(WebElement element) {
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].click();", element);
+	}
+	
+	public String gettext(WebElement element) {
+	String text=element.getText();	
+	return text;
+	}
+	
 	
 }

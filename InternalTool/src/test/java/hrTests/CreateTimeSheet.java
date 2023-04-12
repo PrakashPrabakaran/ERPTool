@@ -5,7 +5,6 @@ import java.io.IOException;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import ERP.methods;
@@ -13,10 +12,8 @@ import basePackage.BaseClass;
 import basePackage.Login;
 import basePackage.UserInformation;
 
-public class AttendenceRequest extends BaseClass{
-
+public class CreateTimeSheet extends BaseClass{
 	
-
 	methods Methods;
 	Login Login;
 	UserInformation user = new UserInformation();
@@ -24,19 +21,25 @@ public class AttendenceRequest extends BaseClass{
 	@BeforeMethod
 	private void open() throws IOException, InterruptedException {
 		browserOpen();
-		Login=new Login(driver);
+		Login = new Login(driver);
 		Methods = new methods(driver);
-		
 	}
 	
-	@Test(priority = 0)
-	public void HR() throws IOException, InterruptedException
-	{
+	@Test(priority = 0, enabled = true)
+	public void create_Timesheet() throws InterruptedException, IOException {
 		Login.loginUser("juniorbeforedate65267@softsuave.com", "softsuave");
-		Methods.hR_Module_Tab();
-		Methods.attendance_Request("01-03-2023", "01-03-2023", "On Duty");
+		Methods.clickOnHRTab();
+		Methods.clickOnProjectTab();
+		Methods.create_TimeSheet(user.Employee_ID_Junior1);
 	}
-		
+	
+	@Test(priority = 1, enabled = true)
+	public void create_Timesheet_On_Same_Date() throws InterruptedException, IOException {
+		Login.loginUser("juniorbeforedate65267@softsuave.com", "softsuave");
+		Methods.clickOnHRTab();
+		Methods.clickOnProjectTab();
+		Methods.create_TimeSheet(user.Employee_ID_Junior1);
+	}
 	
 	@AfterMethod
 	public void logout() throws InterruptedException {
@@ -47,6 +50,5 @@ public class AttendenceRequest extends BaseClass{
 	public void close() {
 		driver.quit();
 	}
-	
-}
 
+}

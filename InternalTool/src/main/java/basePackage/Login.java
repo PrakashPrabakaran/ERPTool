@@ -19,9 +19,9 @@ import ERP.pageLocators;
 		
 		
 		
-		public void loginUser(String usernameEmail,String password) throws IOException {
+		public void loginUser(String employeeMail, String password) throws IOException {
 			try {
-				locators.USERNAME_FIELD.sendKeys(usernameEmail);
+				locators.USERNAME_FIELD.sendKeys(employeeMail);
 		        locators.PASSWORD_FIELD.sendKeys(password);
 		        locators.LOGIN_BUTTON.click();
 				
