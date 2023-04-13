@@ -410,10 +410,26 @@ public class pageLocators {
 	@FindBy(xpath="//span[text()='HR']")
 	public WebElement EXIT_CLICKON_HR;
 	
+//	@FindBy(xpath="//div[@class='widget-group-body grid-col-3']/div/div/div/div/span[text()='Employee']")
+//	public WebElement EXIT_CLICKON_EMP;
+	
+	@FindBy(xpath="//div[@class='widget-group-body grid-col-3']/div/div/div/div/span[text()='Leave Application']")
+	public WebElement EXIT_CLICKON_LEAVE_APPLICATION;
+	
+	@FindBy(xpath="//span[text()='dd Leave Application ']")
+	public WebElement EXIT_CLICKON_ADD_LEAVE_APPLICATION;
+	
+	@FindBy(xpath="//a[text()='HR']")
+	public WebElement EXIT_CLICKON_HR_LEAVE_APPLICATION;
+	
 	@FindBy(xpath="//div[@class='widget-group-body grid-col-3']/div/div/div/div/span[text()='Employee']")
 	public WebElement EXIT_CLICKON_EMP;
 	
-	@FindBy(xpath="//div[@class='filter-selector']")
+	
+	
+	
+	
+	@FindBy(xpath="(//div[@class='filter-selector']//button)[2]")
 	public WebElement EXIT_CLICKON_FILTER;
 	
 	
@@ -423,9 +439,12 @@ public class pageLocators {
 	@FindBy(xpath="//button[@class='btn btn-primary btn-xs apply-filters']")
 	public WebElement EXIT_CLICKON_APPLY_FILTERS;
 	
+	@FindBy(xpath="(//div[@class='standard-filter-section flex']//div[@data-original-title='Name']//input)[2]")
+	public WebElement EXIT_CLICKON_NAME_FIELD;
 	
-	@FindBy(xpath="//a[contains(text(),'Senior Afterdate')]")
-	public WebElement EXIT_CLICKON_EMPNAME;
+//	@FindBy(xpath="//a[contains(text(),'Senior Afterdate')]")
+//	public WebElement EXIT_CLICKON_EMPNAME;
+	
 	
 	@FindBy(xpath="//div[@class='control-input-wrapper']/div/select[@data-fieldname='status']")
 	public WebElement EXIT_CLICKON_STATUS;

@@ -508,14 +508,28 @@ public class methods extends BaseClass{
 	
 	public void exitEmp() throws InterruptedException 
 	{
-//		locators.EXIT_CLICKON_HR.click();
-//		locators.EXIT_CLICKON_EMP.click();
-//		locators.EXIT_CLICKON_FILTER.click();
-//		Thread.sleep(3000);
-//		locators.EXIT_CLICKON_CLEAR_FILTERS.click();
-//		locators.EXIT_CLICKON_APPLY_FILTERS.click();
-//		Thread.sleep(3000);
+		//locators.EXIT_CLICKON_HR.click();
+		//locators.EXIT_CLICKON_EMP.click();
+//		locators.EXIT_CLICKON_LEAVE_APPLICATION.click();
+//		locators.EXIT_CLICKON_ADD_LEAVE_APPLICATION.click();
+		locators.EXIT_CLICKON_HR_LEAVE_APPLICATION.click();
+		locators.EXIT_CLICKON_EMP.click();
+		Thread.sleep(3000);
+		locators.EXIT_CLICKON_FILTER.click();
+		Thread.sleep(3000);
+		locators.EXIT_CLICKON_CLEAR_FILTERS.click();
+		locators.EXIT_CLICKON_APPLY_FILTERS.click();
+		Thread.sleep(3000);
 //		locators.EXIT_CLICKON_EMPNAME.click();
+		locators.EXIT_CLICKON_NAME_FIELD.click();
+		Thread.sleep(3000);
+		locators.EXIT_CLICKON_NAME_FIELD.sendKeys(EmployeeID+Keys.ENTER);
+		Thread.sleep(3000);
+		WebElement string=driver.findElement(By.xpath("//a[@href='/app/employee/"+EmployeeID+"']"));
+		string.click();
+		
+			
+		
 		
 		Thread.sleep(3000);
 		selectByVisibletext(locators.EXIT_CLICKON_STATUS,user.EXIT_CLICKON_STATUS);
