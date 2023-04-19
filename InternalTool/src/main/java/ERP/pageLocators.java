@@ -69,7 +69,7 @@ public class pageLocators {
 	@FindBy(xpath = "//div[@id='alert-container']//div[@class='alert-message']")
 	public WebElement POPUP_ALERT;
 
-	@FindBy(xpath = "//div[@id='alert-container']//a[@class='close']")
+	@FindBy(xpath = "//button[@class='btn btn-modal-close btn-link']")
 	public WebElement CLOSE_POPUP_ALERT;
 
 	@FindBy(xpath = "//a[@class='navbar-brand navbar-home']")
@@ -354,6 +354,17 @@ public class pageLocators {
 	
 	@FindBy(xpath="//button[@data-label='Submit']")
 	public WebElement CREATT_SUBMIT;
+	
+	@FindBy(xpath="//div[@class='msgprint']")
+	public WebElement CREATT_GET_TEXT;
+	
+
+	@FindBy(xpath="//input[@data-fieldname='name']")
+	public WebElement CREATT_LEAVE_TYPE;
+	
+		
+	
+	
 	
 	@FindBy(xpath="//button[contains(text(),'Yes')]")
 	public WebElement CREATT_YES_CONFIRMATION;

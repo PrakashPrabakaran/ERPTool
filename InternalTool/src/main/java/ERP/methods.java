@@ -22,6 +22,8 @@ public class methods extends BaseClass{
 
 	private static final WebElement APPROVED_TEXT = null;
 
+	private static final String String = null;
+
 	pageLocators locators;
 	 
 	 UserInformation user = new UserInformation();
@@ -614,4 +616,229 @@ public class methods extends BaseClass{
 		VerifyTextValidation(locators.POPUP_ALERT, constants.CANCELLED);
 	}
 	
+    // Validating Attendence For Future Date
+	
+	public void Attendence_Negative_For_Future(String employeeName, String dateOfAttendencefuture,String Stauss ) throws InterruptedException
+	{
+		locators.HR_Module1.click();
+
+		
+		locators.CREATT_CLICKON_ATT.click();
+		System.out.println("Clicked on Attendance Button");
+		locators.CREATT_CLICKON_ADD_ATT.click();
+		System.out.println("Clicked on Add Attendance Button");
+		Thread.sleep(3000);
+		waitForElement(locators.CREATT_SELECT_USER);
+		locators.CREATT_SELECT_USER.sendKeys(employeeName + Keys.ENTER);
+		waitForElementClickable(locators.CREATT_PICKT_DATE);
+		locators.CREATT_PICKT_DATE.clear();
+		locators.CREATT_PICKT_DATE.sendKeys(dateOfAttendencefuture + Keys.ENTER);
+		System.out.println("Selected Attendance Date as "+dateOfAttendencefuture);
+		selectByVisibletext(locators.CREATT_DATA_SELECT,Stauss);
+		System.out.println("Selected Attendance status as "+Stauss);
+		locators.CREATT_SHIFT.sendKeys(user.CREATT_Shift);
+		locators.CREATT_SHIFT2.click();
+		locators.CREATT_LATEENTRY.click();
+		Thread.sleep(3000);
+		locators.CREATT_SAVE.click();
+		Thread.sleep(2000);
+		Thread.sleep(2000);
+		Thread.sleep(3000);
+		boolean element = false;
+		try {
+			element = locators.CREATT_GET_TEXT.isDisplayed();
+		} catch (NoSuchElementException e) {
+			element = false;
+		}
+		if(element==true) {
+			
+			System.out.println(gettext(locators.CREATT_GET_TEXT));
+		}else {
+			System.out.println("Create Attendence for "+dateOfAttendencefuture+" ");
+			
+		}
+		locators.CLOSE_POPUP_ALERT.click();
+
+	}
+	
+
+// Validating Attendence For Holiday
+
+public void Attendence_Negative_For_Holiday(String employeeName, String dateOfAttendencefuture,String Stauss ) throws InterruptedException
+{
+	locators.HR_Module1.click();
+
+	
+	locators.CREATT_CLICKON_ATT.click();
+	System.out.println("Clicked on Attendance Button");
+	locators.CREATT_CLICKON_ADD_ATT.click();
+	System.out.println("Clicked on Add Attendance Button");
+	Thread.sleep(3000);
+	waitForElement(locators.CREATT_SELECT_USER);
+	locators.CREATT_SELECT_USER.sendKeys(employeeName + Keys.ENTER);
+	waitForElementClickable(locators.CREATT_PICKT_DATE);
+	locators.CREATT_PICKT_DATE.clear();
+	locators.CREATT_PICKT_DATE.sendKeys(dateOfAttendencefuture + Keys.ENTER);
+	System.out.println("Selected Attendance Date as "+dateOfAttendencefuture);
+	selectByVisibletext(locators.CREATT_DATA_SELECT,Stauss);
+	System.out.println("Selected Attendance status as "+Stauss);
+	locators.CREATT_SHIFT.sendKeys(user.CREATT_Shift);
+	locators.CREATT_SHIFT2.click();
+	locators.CREATT_LATEENTRY.click();
+	Thread.sleep(3000);
+	locators.CREATT_SAVE.click();
+	Thread.sleep(2000);
+	Thread.sleep(2000);
+	Thread.sleep(3000);
+	boolean element = false;
+	try {
+		element = locators.CREATT_GET_TEXT.isDisplayed();
+	} catch (NoSuchElementException e) {
+		element = false;
+	}
+	if(element==true) {
+		
+		System.out.println(gettext(locators.CREATT_GET_TEXT));
+	}else {
+		System.out.println("Create Attendence for "+dateOfAttendencefuture+" ");
+		
+	}
+	locators.CLOSE_POPUP_ALERT.click();
+
+}
+
+
+
+//Validating Attendence For Submit Day
+
+public void Attendence_Negative_For_Submit_Day(String employeeName, String dateOfAttendencefuture,String Stauss ) throws InterruptedException
+{
+	locators.HR_Module1.click();
+
+	
+	locators.CREATT_CLICKON_ATT.click();
+	System.out.println("Clicked on Attendance Button");
+	locators.CREATT_CLICKON_ADD_ATT.click();
+	System.out.println("Clicked on Add Attendance Button");
+	Thread.sleep(3000);
+	waitForElement(locators.CREATT_SELECT_USER);
+	locators.CREATT_SELECT_USER.sendKeys(employeeName + Keys.ENTER);
+	waitForElementClickable(locators.CREATT_PICKT_DATE);
+	locators.CREATT_PICKT_DATE.clear();
+	locators.CREATT_PICKT_DATE.sendKeys(dateOfAttendencefuture + Keys.ENTER);
+	System.out.println("Selected Attendance Date as "+dateOfAttendencefuture);
+	selectByVisibletext(locators.CREATT_DATA_SELECT,Stauss);
+	System.out.println("Selected Attendance status as "+Stauss);
+	locators.CREATT_SHIFT.sendKeys(user.CREATT_Shift);
+	locators.CREATT_SHIFT2.click();
+	locators.CREATT_LATEENTRY.click();
+	Thread.sleep(3000);
+	locators.CREATT_SAVE.click();
+	Thread.sleep(2000);
+	
+	String submit=locators.CREATT_GET_TEXT.getText();
+	System.out.println(submit);
+	
+}
+
+
+
+public void Attendence_Negative_For_AllUsers(String employeeName, String dateOfAttendencefuture,String Stauss,String StatusWorkFromHome,String StatusLessHour) throws InterruptedException
+{
+	locators.HR_Module1.click();
+
+	
+	locators.CREATT_CLICKON_ATT.click();
+	System.out.println("Clicked on Attendance Button");
+	locators.CREATT_CLICKON_ADD_ATT.click();
+	System.out.println("Clicked on Add Attendance Button");
+	Thread.sleep(3000);
+	waitForElement(locators.CREATT_SELECT_USER);
+	locators.CREATT_SELECT_USER.sendKeys(employeeName + Keys.ENTER);
+	waitForElementClickable(locators.CREATT_PICKT_DATE);
+	locators.CREATT_PICKT_DATE.clear();
+	locators.CREATT_PICKT_DATE.sendKeys(dateOfAttendencefuture + Keys.ENTER);
+	System.out.println("Selected Attendance Date as "+dateOfAttendencefuture);
+	selectByVisibletext(locators.CREATT_DATA_SELECT,Stauss);
+	System.out.println("Selected Attendance status as "+Stauss);
+	locators.CREATT_SHIFT.sendKeys(user.CREATT_Shift);
+	locators.CREATT_SHIFT2.click();
+	locators.CREATT_LATEENTRY.click();
+	Thread.sleep(3000);
+	locators.CREATT_SAVE.click();
+	Thread.sleep(2000);
+	Thread.sleep(2000);
+	Thread.sleep(3000);
+	boolean element = false;
+	try {
+		element = locators.CREATT_GET_TEXT.isDisplayed();
+	} catch (NoSuchElementException e) {
+		element = false;
+	}
+	if(element==true) {
+		
+		System.out.println(gettext(locators.CREATT_GET_TEXT));
+	}else {
+		System.out.println("Create Attendence for "+dateOfAttendencefuture+" ");
+		
+	}
+	locators.CLOSE_POPUP_ALERT.click();
+	
+	// Work From Home
+	
+	selectByVisibletext(locators.CREATT_DATA_SELECT,StatusWorkFromHome);
+	System.out.println("Selected Attendance status as "+StatusWorkFromHome);
+	
+	locators.CREATT_SHIFT.sendKeys(user.CREATT_Shift);
+	locators.CREATT_SHIFT2.click();
+	locators.CREATT_LATEENTRY.click();
+	Thread.sleep(3000);
+	locators.CREATT_SAVE.click();
+	Thread.sleep(2000);
+
+	boolean element1 = false;
+	try {
+		element = locators.CREATT_GET_TEXT.isDisplayed();
+	} catch (NoSuchElementException e) {
+		element = false;
+	}
+	if(element==true) {
+		
+		System.out.println(gettext(locators.CREATT_GET_TEXT));
+	}else {
+		System.out.println("Create Attendence for "+dateOfAttendencefuture+" ");
+		
+	}
+	locators.CLOSE_POPUP_ALERT.click();
+	
+	//Less Hour
+	selectByVisibletext(locators.CREATT_DATA_SELECT,StatusLessHour);
+	System.out.println("Selected Attendance status as "+StatusLessHour);
+	
+	locators.CREATT_SHIFT.sendKeys(user.CREATT_Shift);
+	locators.CREATT_SHIFT2.click();
+	locators.CREATT_LATEENTRY.click();
+	Thread.sleep(3000);
+	locators.CREATT_SAVE.click();
+	Thread.sleep(2000);
+
+	boolean element2 = false;
+	try {
+		element = locators.CREATT_GET_TEXT.isDisplayed();
+	} catch (NoSuchElementException e) {
+		element = false;
+	}
+	if(element==true) {
+		
+		System.out.println(gettext(locators.CREATT_GET_TEXT));
+	}else {
+		System.out.println("Create Attendence for "+dateOfAttendencefuture+" ");
+		
+	}
+	locators.CLOSE_POPUP_ALERT.click();
+	
+	
+		
+		
+}
 }
