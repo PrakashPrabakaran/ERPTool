@@ -1,8 +1,10 @@
 package ERP;
 
+import java.awt.AWTException;
 import java.io.File;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 import java.util.Random;
 
 import org.openqa.selenium.By;
@@ -183,15 +185,41 @@ public class methods extends BaseClass{
 		waitForElementClickable(locators.LA_EMPLOYEE_NAME);
 //		locators.LA_EMPLOYEE_NAME.sendKeys(user.Leave_Employee_Name + Keys.ENTER);
 		Scrolljavascriptexecutor("down", locators.LEAVE_FROM_DATE);
+		waitForElementClickable(locators.LEAVE_TO_DATE);
 		locators.LEAVE_FROM_DATE.sendKeys(fromDate+ Keys.ENTER);
+		waitForElementClickable(locators.LEAVE_TO_DATE);
 		locators.LEAVE_TO_DATE.sendKeys(toDate + Keys.ENTER);
 		Thread.sleep(2000);
 		locators.LA_SAVE_BUTTON.click();
 		Thread.sleep(3000);
 		System.out.println("Created leave application for "+fromDate+" and "+toDate+" .");
-//		locators.HR_TAB.click();
-
 	}
+		public String messageprint() throws InterruptedException {
+			String s= null;
+		boolean element = false;
+		try {
+			element = locators.ALERT_MESSAGE.isDisplayed();
+		} catch (NoSuchElementException e) {
+			element = false;
+		}
+		
+		if(element==true) {
+			List<WebElement> elements = locators.ALERT_MESSAGE.findElements(By.tagName("li"));
+			if(!elements.isEmpty()) {
+			    for (WebElement textmessage : elements) {
+			    	s = textmessage.getText();
+			        System.out.println(s);
+			        
+			    }
+			} 
+		}
+		return s;
+		
+
+
+		
+		}
+	
 	
 	/**
 	 * This method will create a new userid for the employee by first name and last name
@@ -558,6 +586,12 @@ public class methods extends BaseClass{
 		javascriptExecutorForceClick(locators.CANCEL_YES_CONFIRMATION);
 		waitForElement(locators.POPUP_ALERT);
 		VerifyTextValidation(locators.POPUP_ALERT, constants.CANCELLED);
+	}
+	public void refreshpage() throws AWTException, InterruptedException {
+     Roboatclass();
+     Thread.sleep(3000);
+		System.out.println("The page is getting reloaded");
+     
 	}
 	
 }

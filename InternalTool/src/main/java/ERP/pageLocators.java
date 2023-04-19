@@ -112,6 +112,15 @@ public class pageLocators {
 
 	@FindBy(xpath = "(//span[text()=' Draft'])[1]")
 	public WebElement LEAVE_APPLICATION_STATUS;
+	
+	@FindBy(xpath = "//div[@class='msgprint']//li[contains(text(),'You')]//b[1]")
+	public WebElement SANDWHICH_LEAVE_APPLICATION_MESSAGE;
+	
+	@FindBy(xpath = "(//div[@class='msgprint'])")
+	public WebElement ALERT_MESSAGE;
+	
+	@FindBy(xpath = "//button[@class='btn btn-modal-close btn-link']")
+	public WebElement sand;
 
 	@FindBy(xpath = "//div[@class='actions-btn-group']//span[@data-label='Actions']/ancestor::button")
 	public WebElement CLICK_ACTION_BUTTON;
