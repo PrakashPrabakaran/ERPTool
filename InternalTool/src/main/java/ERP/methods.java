@@ -1095,7 +1095,7 @@ public void attendance_Request_For_Futuredate(String fromDate, String toDate, St
 	
 }
 
-// Attendence Request For Future Date
+// Attendence Request For present day
 
 
 public void attendance_Request_For_Presenetday(String fromDate, String toDate, String status) throws InterruptedException
