@@ -116,9 +116,9 @@ public class UserInformation {
 	
     public final String To_Date = "27-03-2023";
     
-    public final String Sandwwhich_From_Date = "24-03-2023";
+    public final String Sandwich_From_Date = "24-03-2023";
 	
-    public final String Sandwwhich_To_Date = "24-03-2023";
+    public final String Sandwich_To_Date = "24-03-2023";
     
     public final String Admin = "adminqa@softsuave.com";
     

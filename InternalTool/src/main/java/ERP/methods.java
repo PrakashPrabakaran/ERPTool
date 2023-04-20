@@ -152,8 +152,45 @@ public class methods extends BaseClass{
 		EmployeeID = locators.EMPLOYEE_ID.getText();
 		System.out.println("The new employee has been created with an employee ID of '"+EmployeeID+"'");
 	}
-	
-	
+	public void createNewEmployeewithoutfillmandatoryfields(String Fname,String Lname,String DOJ,String LeavePolicy,String WorkExp) throws InterruptedException {
+		locators.ADD_EMPLOYEE.click();
+		System.out.println("'Add New Employee' button has been clicked");
+		Thread.sleep(2000);
+		
+		//Employee Details
+		waitForElement(locators.EMPLOYEE_FIRSTNAME);
+		locators.EMPLOYEE_FIRSTNAME.sendKeys(Fname);
+		waitForElement(locators.EMPLOYEE_LASTNAME);
+		locators.EMPLOYEE_LASTNAME.sendKeys(Lname);
+		locators.EMPLOYEE_GENDER.sendKeys(user.Employee_Gender+ Keys.ENTER);
+		locators.EMPLOYEE_DOB.sendKeys(user.Employee_DOB+ Keys.ENTER);
+		locators.EMPLOYEE_DOJ.sendKeys(DOJ+ Keys.ENTER);
+		locators.EMPLOYEE_SALUTATION.sendKeys(user.Employee_Salutation+ Keys.ENTER);
+		locators.EMPLOYEE_ANNUAL_CTC.sendKeys(user.Employee_Annual_Ctc+ Keys.ENTER);
+		locators.EMPLOYMENT_TYPE.sendKeys(user.Employment_Type+ Keys.ENTER);
+		
+		//ERPNext User
+		waitForElementClickable(locators.ERPNEXT_USER_BUTTON);
+		locators.ERPNEXT_USER_BUTTON.click();
+		locators.EMPLOYEE_USER_ID.sendKeys(UserEmail);
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//p[@title='"+UserEmail+"']/ancestor::li")).click();
+		System.out.println("Entered the employee details for '"+Fname+" "+Lname+"' with a joining date of " + DOJ);
+		
+		//Department and Grade
+		waitForElementClickable(locators.DEPARTMENT_BUTTON);
+		locators.DEPARTMENT_BUTTON.click();
+		locators.EMPLOYEE_DEPARTMENT.sendKeys(user.Employment_Department);
+		locators.EMPLOYEE_DESIGNATION.sendKeys(user.Employment_Designation);
+		
+		waitForElement(locators.EMPLOYEE_SAVE);
+		locators.EMPLOYEE_SAVE.click();
+//		waitForElement(locators.POPUP_ALERT);
+//		VerifyTextValidation(locators.POPUP_ALERT, constants.Success_Text);
+//		waitForElement(locators.CLOSE_POPUP_ALERT);
+//		locators.CLOSE_POPUP_ALERT.click();
+		Thread.sleep(3000);
+	}
 	public void clickOnAppLogoButton() {
 		waitForElement(locators.CLICK_APP_LOGO);
 		locators.CLICK_APP_LOGO.click();
@@ -208,7 +245,7 @@ public class methods extends BaseClass{
 			if(!elements.isEmpty()) {
 			    for (WebElement textmessage : elements) {
 			    	s = textmessage.getText();
-			        System.out.println(s);
+			        System.err.println(s);
 			        
 			    }
 			} 
@@ -348,6 +385,72 @@ public class methods extends BaseClass{
 		Thread.sleep(3000);
 		VerifyTestResult(locators.APPROVED_SUBMITTED_TEXT, constants.APPROVED_Submitted_Text);
 		Thread.sleep(4000);
+	}
+	
+	public void Create_Timesheet_Future_Date(String employeeName) throws InterruptedException {
+		waitForElement(locators.TIMESHEET_BUTTON);
+		locators.TIMESHEET_BUTTON.click();
+		System.out.println("Clicked on Timesheet Button");
+		
+		waitForElement(locators.ADD_TIMESHEET_BUTTON);
+		locators.ADD_TIMESHEET_BUTTON.click();
+		System.out.println("Clicked on Add Timesheet Button");
+		
+		waitForElement(locators.TIMESHEET_EMPLOYEE_ID);
+		locators.TIMESHEET_EMPLOYEE_ID.click();
+		locators.TIMESHEET_EMPLOYEE_ID.clear();
+		Thread.sleep(2000);
+//		locators.TIMESHEET_EMPLOYEE_ID.sendKeys(user.Timesheet_Employee_ID);
+		locators.TIMESHEET_EMPLOYEE_ID.sendKeys(employeeName);
+		WebElement empName = driver.findElement(By.xpath("//p[@title='"+employeeName+"']/ancestor::li"));
+		waitForElement(empName);
+		empName.click();
+		Thread.sleep(2000);
+		locators.TIMESHEET_RESOURCE_NAMEFIELD.clear();
+		locators.TIMESHEET_RESOURCE_NAMEFIELD.sendKeys(user.Timesheet_Resource_Name);
+		locators.TIMESHEET_RESOUCE_NAME.click();
+		Thread.sleep(2000);
+		
+		waitForElementClickable(locators.TIMESHEET_ACTIVITY_TYPE_BTN);
+		locators.TIMESHEET_ACTIVITY_TYPE_BTN.click();
+		Thread.sleep(2000);
+		waitForElementClickable(locators.TIMESHEET_ACTIVITY_TYPE_FIELD);
+		locators.TIMESHEET_ACTIVITY_TYPE_FIELD.sendKeys("Testing");
+		Thread.sleep(2000);
+		waitForElementClickable(locators.TIMESHEET_ACTIVITY_TYPE_NAME);
+		Thread.sleep(2000);
+		
+		locators.TIMESHEET_DATE.sendKeys("01-03-2024"+" 10:00");
+		locators.TIMESHEET_HOURS.sendKeys("8");
+		Thread.sleep(2000);
+		waitForElementClickable(locators.TIMESHEET_PROJECT);
+		locators.TIMESHEET_PROJECT.sendKeys(user.Timesheet_Project_Name);
+		WebElement projectName = driver.findElement(By.xpath("//p[@title='"+user.Timesheet_Project_Name+"']/ancestor::li"));
+		waitForElementClickable(projectName);
+		projectName.click();
+		Thread.sleep(2000);
+		waitForElementClickable(locators.TIMESHEET_SAVE_BUTTON);
+		locators.TIMESHEET_SAVE_BUTTON.click();
+		Thread.sleep(3000);
+		boolean SavedPopupIsDisplayed = false;
+		try {
+		    SavedPopupIsDisplayed = locators.POPUP_ALERT.isDisplayed();
+		} catch (NoSuchElementException e) {
+		    SavedPopupIsDisplayed = false;
+		}
+		if(SavedPopupIsDisplayed==true) {
+			VerifyTextValidation(locators.POPUP_ALERT, "Saved");
+			Thread.sleep(2000);
+			TimesheetID = locators.TIMESHEET_ID.getText();
+			System.out.println("Timesheet ID : "+TimesheetID);
+			locators.CLOSE_POPUP_ALERT.click();
+		}else if(locators.ALERT_TEXT_MESSAGE.isDisplayed())
+		{
+			String alerttext = locators.ALERT_TEXT_MESSAGE.getText();
+			VerifyTextValidation(locators.ALERT_TEXT_MESSAGE, "Saved");
+			waitForElementClickable(locators.NEW_USER_WELCOME_EMAIL_SENT_POPUP_CLOSE);
+			javascriptExecutorForceClick(locators.NEW_USER_WELCOME_EMAIL_SENT_POPUP_CLOSE);
+		}
 	}
 	
 	public void hR_Module_Tab()
