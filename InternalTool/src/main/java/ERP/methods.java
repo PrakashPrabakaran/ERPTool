@@ -836,9 +836,306 @@ public void Attendence_Negative_For_AllUsers(String employeeName, String dateOfA
 		
 	}
 	locators.CLOSE_POPUP_ALERT.click();
-	
-	
-		
 		
 }
+
+//Less Hour Request for Present Day
+
+public void less_Hour_Attendance_Request_For_Presentday(String emp,String LessHourDate) throws InterruptedException 
+{
+	
+	locators.LESS_ATT_REQ.click();
+	waitForElementClickable(locators.LESS_ADD_ATT_REQ);
+	locators.LESS_ADD_ATT_REQ.click();
+	locators.LESS_SELECT_EMP1.sendKeys(emp);
+	locators.LESS_DATE.clear();
+	locators.LESS_DATE.sendKeys(LessHourDate);
+	locators.LESS_REASON.click();
+	selectByVisibletext(locators.LESS_REASON,user.LESS_REASON);
+	selectByVisibletext(locators.LESS_STATUS_CHANGE_TO,user.LESS_STATUS);
+	locators.LESS_EXPLANATION.sendKeys(user.LESS_EXPLANATION);
+	locators.LESS_DATA_FIELD_TYPE.click();
+	String projectFolderPath = System.getProperty("user.dir");
+	File file = new File(projectFolderPath + "/Attachments/file.jpg");
+	locators.LESS_FILE_UPLOAD.sendKeys(file.getAbsolutePath());
+    Thread.sleep(3000);
+	locators.LESS_STANDARD_ACTIONS.click();
+	Thread.sleep(3000);
+	locators.LESS_STANDARD_ACTIONS_FELX.click();	
+	
+	
+	boolean element2 = false;
+	try {
+		element2 = locators.LESS_ALERT.isDisplayed();
+	} catch (NoSuchElementException e) {
+		element2 = false;
+	}
+	if(element2==true) {
+		
+		System.out.println(gettext(locators.LESS_ALERT));
+	}else {
+		System.out.println("Create Attendence for "+LessHourDate+" ");
+		
+	}
+	locators.CLOSE_POPUP_ALERT.click();
+		
+	
+	
 }
+	
+	
+
+//Less Hour Request For Holiday
+
+public void less_Hour_Attendance_Request_For_Holiday(String emp,String LessHourDate) throws InterruptedException 
+{
+	
+	locators.LESS_ATT_REQ.click();
+	waitForElementClickable(locators.LESS_ADD_ATT_REQ);
+	locators.LESS_ADD_ATT_REQ.click();
+	locators.LESS_SELECT_EMP1.sendKeys(emp);
+	locators.LESS_DATE.clear();
+	locators.LESS_DATE.sendKeys(LessHourDate);
+//	locators.LESS_DATE_SELECT.click();
+	locators.LESS_REASON.click();
+	selectByVisibletext(locators.LESS_REASON,user.LESS_REASON);
+	selectByVisibletext(locators.LESS_STATUS_CHANGE_TO,user.LESS_STATUS);
+	locators.LESS_EXPLANATION.sendKeys(user.LESS_EXPLANATION);
+	locators.LESS_DATA_FIELD_TYPE.click();
+	String projectFolderPath = System.getProperty("user.dir");
+	File file = new File(projectFolderPath + "/Attachments/file.jpg");
+	locators.LESS_FILE_UPLOAD.sendKeys(file.getAbsolutePath());
+    Thread.sleep(3000);
+	locators.LESS_STANDARD_ACTIONS.click();
+	Thread.sleep(3000);
+	locators.LESS_STANDARD_ACTIONS_FELX.click();	
+	
+	
+	boolean element2 = false;
+	try {
+		element2 = locators.LESS_ALERT.isDisplayed();
+	} catch (NoSuchElementException e) {
+		element2 = false;
+	}
+	if(element2==true) {
+		
+		System.out.println(gettext(locators.LESS_ALERT));
+	}else {
+		System.out.println("Create Attendence for "+LessHourDate+" ");
+		
+	}
+	locators.CLOSE_POPUP_ALERT.click();		
+}
+
+
+//Attendence Request for Absent
+
+public void less_Hour_Attendance_Request_For_Absent(String emp,String LessHourDate) throws InterruptedException 
+{
+	
+	locators.LESS_ATT_REQ.click();
+	waitForElementClickable(locators.LESS_ADD_ATT_REQ);
+	locators.LESS_ADD_ATT_REQ.click();
+	locators.LESS_SELECT_EMP1.sendKeys(emp);
+	locators.LESS_DATE.clear();
+	locators.LESS_DATE.sendKeys(LessHourDate);
+//	locators.LESS_DATE_SELECT.click();
+	locators.LESS_REASON.click();
+	selectByVisibletext(locators.LESS_REASON,user.LESS_REASON);
+	selectByVisibletext(locators.LESS_STATUS_CHANGE_TO,user.LESS_STATUS);
+	locators.LESS_EXPLANATION.sendKeys(user.LESS_EXPLANATION);
+	locators.LESS_DATA_FIELD_TYPE.click();
+	String projectFolderPath = System.getProperty("user.dir");
+	File file = new File(projectFolderPath + "/Attachments/file.jpg");
+	locators.LESS_FILE_UPLOAD.sendKeys(file.getAbsolutePath());
+    Thread.sleep(3000);
+	locators.LESS_STANDARD_ACTIONS.click();
+	Thread.sleep(3000);
+	locators.LESS_STANDARD_ACTIONS_FELX.click();	
+	
+	
+	boolean element2 = false;
+	try {
+		element2 = locators.LESS_ALERT.isDisplayed();
+	} catch (NoSuchElementException e) {
+		element2 = false;
+	}
+	if(element2==true) {
+		
+		System.out.println(gettext(locators.LESS_ALERT));
+	}else {
+		System.out.println("Create Attendence for "+LessHourDate+" ");
+		
+	}
+	locators.CLOSE_POPUP_ALERT.click();		
+}
+
+
+// Attendence Request For On Leave
+
+public void less_Hour_Attendance_Request_For_On_Leave(String emp,String LessHourDate) throws InterruptedException 
+{
+	
+	locators.LESS_ATT_REQ.click();
+	waitForElementClickable(locators.LESS_ADD_ATT_REQ);
+	locators.LESS_ADD_ATT_REQ.click();
+	locators.LESS_SELECT_EMP1.sendKeys(emp);
+	locators.LESS_DATE.clear();
+	locators.LESS_DATE.sendKeys(LessHourDate);
+//	locators.LESS_DATE_SELECT.click();
+	locators.LESS_REASON.click();
+	selectByVisibletext(locators.LESS_REASON,user.LESS_REASON);
+	selectByVisibletext(locators.LESS_STATUS_CHANGE_TO,user.LESS_STATUS);
+	locators.LESS_EXPLANATION.sendKeys(user.LESS_EXPLANATION);
+	locators.LESS_DATA_FIELD_TYPE.click();
+	String projectFolderPath = System.getProperty("user.dir");
+	File file = new File(projectFolderPath + "/Attachments/file.jpg");
+	locators.LESS_FILE_UPLOAD.sendKeys(file.getAbsolutePath());
+    Thread.sleep(3000);
+	locators.LESS_STANDARD_ACTIONS.click();
+	Thread.sleep(3000);
+	locators.LESS_STANDARD_ACTIONS_FELX.click();	
+	
+	
+	boolean element2 = false;
+	try {
+		element2 = locators.LESS_ALERT.isDisplayed();
+	} catch (NoSuchElementException e) {
+		element2 = false;
+	}
+	if(element2==true) {
+		
+		System.out.println(gettext(locators.LESS_ALERT));
+	}else {
+		System.out.println("Create Attendence for "+LessHourDate+" ");
+		
+	}
+	locators.CLOSE_POPUP_ALERT.click();		
+}
+
+// Less Hour Requst For Less Hour 
+
+public void less_Hour_Attendance_Request_For_Less_Hour(String emp,String LessHourDate) throws InterruptedException 
+{
+	
+	locators.LESS_ATT_REQ.click();
+	waitForElementClickable(locators.LESS_ADD_ATT_REQ);
+	locators.LESS_ADD_ATT_REQ.click();
+	locators.LESS_SELECT_EMP1.sendKeys(emp);
+	locators.LESS_DATE.clear();
+	locators.LESS_DATE.sendKeys(LessHourDate);
+	locators.LESS_REASON.click();
+	selectByVisibletext(locators.LESS_REASON,user.LESS_REASON);
+	selectByVisibletext(locators.LESS_STATUS_CHANGE_TO,user.LESS_STATUS);
+	locators.LESS_EXPLANATION.sendKeys(user.LESS_EXPLANATION);
+	locators.LESS_DATA_FIELD_TYPE.click();
+	String projectFolderPath = System.getProperty("user.dir");
+	File file = new File(projectFolderPath + "/Attachments/file.jpg");
+	locators.LESS_FILE_UPLOAD.sendKeys(file.getAbsolutePath());
+    Thread.sleep(3000);
+	locators.LESS_STANDARD_ACTIONS.click();
+	Thread.sleep(3000);
+	locators.LESS_STANDARD_ACTIONS_FELX.click();	
+	
+	
+	boolean element2 = false;
+	try {
+		element2 = locators.LESS_ALERT.isDisplayed();
+	} catch (NoSuchElementException e) {
+		element2 = false;
+	}
+	if(element2==true) {
+		
+		System.out.println(gettext(locators.LESS_ALERT));
+	}else {
+		System.out.println("Create Attendence for "+LessHourDate+" ");
+		
+	}
+	locators.CLOSE_POPUP_ALERT.click();		
+}
+
+// Attendence Request For Future Date
+
+public void attendance_Request_For_Futuredate(String fromDate, String toDate, String status) throws InterruptedException
+{
+	waitForElement(locators.AR_ATTENDENCE_REQUEST);
+	locators.AR_ATTENDENCE_REQUEST.click();
+	System.out.println("Clicked on Attendance Request Button");
+	locators.AR_ADD_ATTENDENCE_REQUEST.click();
+	locators.AR_SELECT_FROMDATE.clear();
+	locators.AR_SELECT_FROMDATE.sendKeys(fromDate);
+	locators.AR_SELECT_TO_DATE.clear();
+	locators.AR_SELECT_TO_DATE.sendKeys(toDate);
+	selectByVisibletext(locators.AR_DATA_SELECT,status);
+	locators.AR_DATA_FIELD_NAME.sendKeys(user.AR_Explanation);
+	locators.AR_DATA_FIELD_TYPE.click();
+	String projectFolderPath = System.getProperty("user.dir");
+	File file = new File(projectFolderPath + "/Attachments/file.jpg");
+	locators.AR_FILE_UPLOAD.sendKeys(file.getAbsolutePath());
+	Thread.sleep(3000);
+	waitForElement(locators.AR_STANDARD_ACTIONS);
+	locators.AR_STANDARD_ACTIONS.click();
+	Thread.sleep(3000);
+	locators.AR_STANDARD_ACTIONS_FELX.click();
+	
+	boolean element2 = false;
+	try {
+		element2 = locators.LESS_ALERT.isDisplayed();
+	} catch (NoSuchElementException e) {
+		element2 = false;
+	}
+	if(element2==true) {
+		
+		System.out.println(gettext(locators.LESS_ALERT));
+	}else {
+		System.out.println("Create Attendence for "+fromDate+" "+toDate+"");
+		
+	}
+	locators.CLOSE_POPUP_ALERT.click();		
+	
+}
+
+// Attendence Request For Future Date
+
+
+public void attendance_Request_For_Presenetday(String fromDate, String toDate, String status) throws InterruptedException
+{
+	waitForElement(locators.AR_ATTENDENCE_REQUEST);
+	locators.AR_ATTENDENCE_REQUEST.click();
+	System.out.println("Clicked on Attendance Request Button");
+	locators.AR_ADD_ATTENDENCE_REQUEST.click();
+	locators.AR_SELECT_FROMDATE.clear();
+	locators.AR_SELECT_FROMDATE.sendKeys(fromDate);
+	locators.AR_SELECT_TO_DATE.clear();
+	locators.AR_SELECT_TO_DATE.sendKeys(toDate);
+	selectByVisibletext(locators.AR_DATA_SELECT,status);
+	locators.AR_DATA_FIELD_NAME.sendKeys(user.AR_Explanation);
+	locators.AR_DATA_FIELD_TYPE.click();
+	String projectFolderPath = System.getProperty("user.dir");
+	File file = new File(projectFolderPath + "/Attachments/file.jpg");
+	locators.AR_FILE_UPLOAD.sendKeys(file.getAbsolutePath());
+	Thread.sleep(3000);
+	waitForElement(locators.AR_STANDARD_ACTIONS);
+	locators.AR_STANDARD_ACTIONS.click();
+	Thread.sleep(3000);
+	locators.AR_STANDARD_ACTIONS_FELX.click();
+	
+	boolean element2 = false;
+	try {
+		element2 = locators.LESS_ALERT.isDisplayed();
+	} catch (NoSuchElementException e) {
+		element2 = false;
+	}
+	if(element2==true) {
+		
+		System.out.println(gettext(locators.LESS_ALERT));
+	}else {
+		System.out.println("Create Attendence for "+fromDate+" "+toDate+"");
+		
+	}
+		
+	
+}
+
+}
+

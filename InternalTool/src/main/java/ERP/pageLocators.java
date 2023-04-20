@@ -417,6 +417,11 @@ public class pageLocators {
 	@FindBy(xpath="//div[@class='standard-actions flex']/button[@data-label='Save']")
 	public WebElement LESS_STANDARD_ACTIONS_FELX;
 	
+	
+	@FindBy(xpath="//div[@class='msgprint']")
+	public WebElement LESS_ALERT;
+	
+	
     
 	@FindBy(xpath="//span[text()='HR']")
 	public WebElement EXIT_CLICKON_HR;
