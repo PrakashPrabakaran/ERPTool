@@ -11,6 +11,7 @@ import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.OutputType;
+import org.openqa.selenium.PageLoadStrategy;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -39,12 +40,15 @@ public class BaseClass {
 		options.addArguments("--disable-popup-blocking"); // Disable pop-up blocking
 		options.addArguments("no-sandbox");
 		options.addArguments("disable-dev-shm-usage");
+        options.setPageLoadStrategy(PageLoadStrategy.EAGER);
 		WebDriverManager.chromedriver().setup();
 		driver = new ChromeDriver(options);
 		Reporter.log("Website is launching");
 		driver.get("https://appointry.com/login#login");
 		Reporter.log("User name is entered");
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(60));
+		driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(60));
+
 	}
 
 	public static void browserClose() throws IOException {

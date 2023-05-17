@@ -39,6 +39,7 @@ public class TestCase extends BaseClass{
 		Methods.clickOnHRTab();
 		Methods.verifyTotalLeaveAllocation(user.Before_Buffer_Date);
 		System.out.println("Successfully created the junior employee details with a joining date before the 25th");
+//		Methods.exitEmp();
 	}
 	
 	@Test(priority = 1, description ="Verify an employee/approver can create an attendance, approval and cancel the attendace.",enabled = true)
@@ -71,7 +72,7 @@ public class TestCase extends BaseClass{
 		Methods.cancel_Leave();
 	}
 	
-	@Test(priority = 3,description ="Verify the user is able to create and delete the timesheet", enabled = true)
+	@Test(priority = 3,description ="Verify the employee is able to create,approve and delete the timesheet", enabled = true)
 	public void Create_Timesheet() throws InterruptedException, IOException {
 		Login.loginUser(user.Junior_Before_Date, user.Password);
 		Methods.clickOnHRTab();
@@ -84,7 +85,7 @@ public class TestCase extends BaseClass{
 		Methods.approve_Timesheet();
 		Methods.timesheet_cancel();
 	}
-	
+
 	
 	@AfterMethod
 	public void logout() throws InterruptedException {

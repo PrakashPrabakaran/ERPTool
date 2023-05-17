@@ -6,7 +6,7 @@ import org.openqa.selenium.support.FindBy;
 public class pageLocators {
 
 	@FindBy(xpath = "//input[@id='login_email']")
-	public WebElement USERNAME_FIELD;
+	public WebElement USERNAME_FIELD; 
 
 	@FindBy(xpath = "//input[@id='login_password']")
 	public WebElement PASSWORD_FIELD;
@@ -275,6 +275,8 @@ public class pageLocators {
 	@FindBy(xpath="(//span[text()=' Draft'])[1]/preceding::a[@data-doctype='Less Hour Attendance Request']")
 	public WebElement DRAFT_LESS_HOUR;
 	
+	//Attendance Request
+	
 	@FindBy(xpath="//select[@data-fieldtype='Select' and @data-doctype='Attendance']")
 	public WebElement SELECT_ATTENDANCE_STATUS;
 	
@@ -320,9 +322,8 @@ public class pageLocators {
 	
 	@FindBy(xpath="//div[@class='modal-dialog msgprint-dialog']//div[@class='msgprint']")
 	public WebElement EMAIL_SEND_TO;
-	
-	@FindBy(xpath="//span[text()='HR']")
-	public WebElement HR_Module1;
+		
+	//Attendance Creation
 	
 	@FindBy(xpath="//span[text()='Attendance']")
 	public WebElement CREATT_CLICKON_ATT;
@@ -359,6 +360,8 @@ public class pageLocators {
 	
 	@FindBy(xpath="//div[@class='modal fade show']//button[contains(text(),'Yes')]")
 	public WebElement CANCEL_YES_CONFIRMATION;
+	
+	//Less Hours Request
 	
 	@FindBy(xpath="//span[text()='HR Module']")
 	public WebElement LESS_HR_Module2;
@@ -443,4 +446,66 @@ public class pageLocators {
 	
 	@FindBy(xpath="//button[@data-label='Submit']")
 	public WebElement SUBMIT_BUTTON;
+
+	@FindBy(xpath="//button[@class='btn btn-modal-close btn-link']")
+	public WebElement CLOSE_DIALOG_BOX;
+	
+	
+	//Exit Locators
+	
+	@FindBy(xpath="//div[@class='widget-group-body grid-col-3']/div/div/div/div/span[text()='Employee']")
+	public WebElement EXIT_CLICKON_EMP;
+	
+	@FindBy(xpath="//div[@class='filter-selector']")
+	public WebElement EXIT_CLICKON_FILTER;
+	
+	@FindBy(xpath="//div//button[@class='btn btn-secondary btn-xs clear-filters']")
+	public WebElement EXIT_CLICKON_CLEAR_FILTERS;
+	
+	@FindBy(xpath="//button[@class='btn btn-primary btn-xs apply-filters']")
+	public WebElement EXIT_CLICKON_APPLY_FILTERS;
+	
+	@FindBy(xpath="//a[contains(text(),'Senior Afterdate')]")
+	public WebElement EXIT_CLICKON_EMPNAME;
+	
+	@FindBy(xpath="//div[@class='control-input-wrapper']/div/select[@data-fieldname='status']")
+	public WebElement EXIT_CLICKON_STATUS;
+	
+	@FindBy(xpath="//div[@class='row form-section card-section visible-section']//div[contains(text(),'Exit')]")
+	public WebElement EXIT_CLICKON_EXIT;
+	
+	@FindBy(xpath="//select[@data-fieldname='exit_type']")
+	public WebElement EXIT_CLICKON_EXIT_TYPE;
+	
+	@FindBy(xpath="//input[@data-fieldname='resignation_letter_date']")
+	public WebElement EXIT_CLICKON_RESIGNATION_LETTER_DATE;
+	
+	@FindBy(xpath="//input[@data-fieldname='resignation_letter_date']")
+	public WebElement EXIT_CLICKON_RESIGNATION_LETTER_DATE2;
+	
+	@FindBy(xpath="//input[@data-fieldname='relieving_date']")
+	public WebElement EXIT_CLICKON_RELIVING_LETTER_DATE;
+	
+	@FindBy(xpath="//input[@data-fieldname='relieving_date']")
+	public WebElement EXIT_CLICKON_RELIVING_LETTER_DATE2;
+	
+	@FindBy(xpath="//div[@class='control-input']//textarea[@data-fieldname='reason_for_leaving']")
+	public WebElement EXIT_CLEAR_REASONFOR_RELIVING;
+	
+	@FindBy(xpath="//div[@class='control-input']//textarea[@data-fieldname='reason_for_leaving']")
+	public WebElement EXIT_TEXT_REASONFOR_RELIVING;
+	
+	@FindBy(xpath="//button[text()='S']")
+	public WebElement EXIT_CLICKON_SAVE;
+	
+	@FindBy(xpath="//div[@class='row form-section card-section visible-section']//div[contains(text(),'ERPNext User')]")
+	public WebElement EXIT_CLICKON_EXIT_DROPDOWN;
+	
+	@FindBy(xpath="//input[@data-fieldname='user_id']")
+	public WebElement EXIT_CLICKON_EXIT_FIELD;
+
+	@FindBy(xpath="//span[contains(@style,'display: block;')]//a[@title='Open Link']")
+	public WebElement EXIT_CLICKON_EXIT_ARROW;
+	
+	
 }

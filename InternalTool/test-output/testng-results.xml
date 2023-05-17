@@ -10,16 +10,13 @@
     <line>
       <![CDATA[User name is entered]]>
     </line>
-    <line>
-      <![CDATA[HR Tab is clicked]]>
-    </line>
   </reporter-output>
-  <suite started-at="2023-03-17T11:38:23 IST" name="Default suite" finished-at="2023-03-17T11:38:29 IST" duration-ms="6109">
+  <suite started-at="2023-05-09T11:43:27 IST" name="Default suite" finished-at="2023-05-09T11:43:52 IST" duration-ms="25348">
     <groups>
     </groups>
-    <test started-at="2023-03-17T11:38:23 IST" name="Default test" finished-at="2023-03-17T11:38:29 IST" duration-ms="6109">
-      <class name="hrTests.HRTestCases">
-        <test-method is-config="true" signature="open()[pri:0, instance:hrTests.HRTestCases@52b1beb6]" started-at="2023-03-17T11:38:23 IST" name="open" finished-at="2023-03-17T11:38:26 IST" duration-ms="3248" status="PASS">
+    <test started-at="2023-05-09T11:43:27 IST" name="Default test" finished-at="2023-05-09T11:43:52 IST" duration-ms="25348">
+      <class name="hrTests.InvoiceReport">
+        <test-method is-config="true" signature="open()[pri:0, instance:hrTests.InvoiceReport@43dac38f]" started-at="2023-05-09T11:43:27 IST" name="open" finished-at="2023-05-09T11:43:31 IST" duration-ms="4200" status="PASS">
           <reporter-output>
             <line>
               <![CDATA[Chrome is launched]]>
@@ -32,18 +29,11 @@
             </line>
           </reporter-output>
         </test-method> <!-- open -->
-        <test-method signature="create_Employee()[pri:0, instance:hrTests.HRTestCases@52b1beb6]" started-at="2023-03-17T11:38:26 IST" name="create_Employee" description="Verify the user is able to create the Employee" finished-at="2023-03-17T11:38:29 IST" duration-ms="2703" status="PASS">
-          <reporter-output>
-            <line>
-              <![CDATA[HR Tab is clicked]]>
-            </line>
-          </reporter-output>
-        </test-method> <!-- create_Employee -->
-        <test-method is-config="true" signature="driverClose()[pri:0, instance:hrTests.HRTestCases@52b1beb6]" started-at="2023-03-17T11:38:29 IST" name="driverClose" finished-at="2023-03-17T11:38:29 IST" duration-ms="121" status="PASS">
+        <test-method signature="In_Voice_Reports()[pri:0, instance:hrTests.InvoiceReport@43dac38f]" started-at="2023-05-09T11:43:31 IST" name="In_Voice_Reports" description="Invoice Reports" finished-at="2023-05-09T11:43:52 IST" duration-ms="21118" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- driverClose -->
-      </class> <!-- hrTests.HRTestCases -->
+        </test-method> <!-- In_Voice_Reports -->
+      </class> <!-- hrTests.InvoiceReport -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

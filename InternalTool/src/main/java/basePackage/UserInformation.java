@@ -67,19 +67,11 @@ public class UserInformation {
     public final String Employee_ID_Junior1 = "SS00581";
     
     public final String Employee_ID_Junior2 = "SS00582";
-    
-    public final String AR_emp_name="Vinoth Kumar C";
-    
-    public final String AR_Reason="On Duty";
-    
+     
     public final String AR_Explanation="Due to health Issue";
     
     public final String AR_Attach="D:\\Bills_cc\\02-05-2022\\Biscuits.pdf";
-    
-    public final String CREATT_emp_name="Pushpa pushpa";
-    
-    public final String CREATT_Status="Less Hour";
-    
+        
     public final String CREATT_Shift="9 AM Shift";
     
     public final String LESS_emp_name="Maganti Venkata Sreedhar";
@@ -123,6 +115,13 @@ public class UserInformation {
     public final String Junior_Before_Date ="juniorbeforedate65267@softsuave.com";
     
     public final String Attendance_Date ="02-03-2023";
+    
+    public final String EXIT_CLICKON_STATUS="Left";
+    public final String EXIT_CLICKON_EXIT_TYPE="Resignation";
+    public final String REGISTRATION_LETTER_DATE="11-04-2023";
+    public final String RELIVING_LETTER_DATE="12-04-2023";
+    
+    public final String EXIT_TEXT_REASONFOR_RELIVING="My Bond Is Expired";
     
     
 	}
